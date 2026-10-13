@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlamCart - Contact Us</title>
+        <link rel="stylesheet" href="st.css">
+    </head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">GlamCart
+            <h4 class="lh4">Style that speaks</h4>
+        </div>
+            <ul>
+                <li><a href="demo.html">Home</a></li>
+                <li><a href="prdct.html">Products</a></li>
+                <li><a href="categrs.html">Categories</a></li>
+                <li><a href="abt.html">About Us</a></li>
+                <li><a href="cntct.html">Contact</a></li>
+                <li><a href="crt.html">Cart 🛒</a></li>
+            </ul>
+    </nav> 
+
+    <!-- Cart Section -->
+    <section class="cart">
+            <h1>Shopping Cart</h1>
+                <p>  Your selected products are shown below. </p>
+
+                <!-- Cart Items -->
+                <div id="cart-items">
+                        <!-- JavaScript will display cart products here -->
+                </div>
+
+                <!-- Cart Total -->
+                <div class="cart-summary">
+                    <h2> Total: ₹<span id="cart-total">0</span> </h2>
+
+                        <button onclick="checkout()"> Proceed to Checkout </button>
+
+                        <button onclick="clearCart()"> Clear Cart </button>
+                </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>  © 2026 GlamCart - Online Cloth Shopping System </p>
+    </footer>
+
+    <script src="scrpt.js"></script>
+</body>
+</html>
