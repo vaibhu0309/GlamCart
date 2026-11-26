@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlamCart - Checkout</title>
+        <link rel="stylesheet" href="st.css">
+    </head>
+<body class="checkout-page">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">GlamCart
+            <h4 class="lh4">Style that speaks</h4>
+        </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prdct.html">Products</a></li>
+                <li><a href="categrs.html">Categories</a></li>
+                <li><a href="abt.html">About Us</a></li>
+                <li><a href="cntct.html">Contact</a></li>
+                <li><a href="crt.html">Cart 🛒</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+            </ul>
+    </nav>
+
+    <!--h1>GlamCart Checkout</h1-->
+    <h2>Customer Details</h2>
+
+        <!--form id="checkoutForm"-->
+        <form id="checkoutForm" onsubmit="return placeOrder(event)"> 
+                <input type="text" id="customerName" placeholder="Enter Your Name" required>
+                    <br><br>
+                <input type="tel" id="phone" placeholder="Enter Mobile Number" required>
+                    <br><br>
+                <textarea id="address" placeholder="Enter Your Address" required></textarea>
+                    <br><br>
+
+            <h2>Order Summary</h2>
+            <div id="orderSummary"></div>
+
+            <h2 id="grandTotal"></h2>
+
+            <!-- Payment Method Section -->
+            <div class="payment-section">
+
+                <h2>Select Payment Method</h2>
+                    <p class="payment-subtitle">Choose your preferred payment option</p>
+
+                <div class="payment-options">
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="Google Pay" required>
+                            <span class="app-icon google-icon">G</span>
+                            <span class="payment-name">Google Pay</span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="PhonePe">
+                            <span class="app-icon phone-icon">पे</span>
+                            <span class="payment-name">PhonePe</span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="Paytm">
+                            <span class="app-icon paytm-icon">Paytm</span>
+                            <span class="payment-name">Paytm</span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="RuPay">
+                            <span class="app-icon rupay-icon">RuPay</span>
+                            <span class="payment-name">RuPay</span>
+                    </label>
+
+                </div>
+
+                <p class="demo-note">
+                    This is only a demo payment. No real transaction will happen.
+                </p>
+            </div>
+
+            <button type="submit">Confirm Order</button>
+                
+        </form>
+
+    <script src="scrpt.js"></script>
+
+</body>
+</html>
