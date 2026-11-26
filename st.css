@@ -535,6 +535,367 @@ footer {
     margin-top: 30px;
 }
 
+/* =====================================
+        My Orders Page 
+===================================== */
+.orders-page {
+    background-color: #fff7fb;
+}
+
+.orders-page h1 {
+    text-align: center;
+    color: #8e4475;
+    margin: 35px 0;
+}
+
+#ordersList {
+    width: 85%;
+    margin: auto;
+}
+
+.order-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    border: 1px solid #f0d6e8;
+    box-shadow: 0 4px 12px rgba(142, 68, 117, 0.10);
+}
+
+.order-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0d6e8;
+    padding-bottom: 12px;
+}
+
+.order-heading h2 {
+    color: #8e4475;
+}
+
+.order-heading span {
+    background-color: #fce4ef;
+    color: #8e4475;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.order-date {
+    color: #777;
+}
+
+.order-card h3 {
+    color: #a34d83;
+}
+
+.ordered-product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff9fc;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+}
+
+.ordered-product img {
+    width: 110px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.ordered-product p {
+    color: #555;
+    margin: 8px 0;
+}
+
+.order-total {
+    color: #8e4475;
+    border-top: 1px solid #f0d6e8;
+    padding-top: 15px;
+}
+
+.orders-page .continue-shopping {
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    background-color: #a34d83;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.orders-page .continue-shopping:hover {
+    background-color: #78345f;
+}
+
+/* Continue Shopping - GlamCart Theme */
+.continue-shopping {
+    display: inline-block;
+    margin: 2px 0;
+    padding: 12px 15px;
+    background-color: #292638;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.continue-shopping:hover {
+    /*background-color: #8e4475;*/
+    background-color:#c14a7df0;
+    color: white;
+}
 
 
+
+/* =====================================
+        GlamCart Checkout Page 
+===================================== */
+.checkout-page {
+    background-color:rgba(207, 222, 226, 0.779);
+    font-family: Arial, sans-serif;
+}
+
+.checkout-page h2 {
+    text-align: center;
+    color: #8e4475;
+    margin: 35px 0;
+    font-size: 29px;
+}
+
+/* Checkout Form */
+.checkout-page #checkoutForm {
+    width: 40%;
+    /*height: 650px;*/
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #f0d6e8;
+    box-shadow: 0 4px 15px rgba(142, 68, 117, 0.12);
+}
+
+/* Input Fields */
+.checkout-page input,
+.checkout-page textarea {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: 1px solid #eea5d7;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.checkout-page input:focus,
+.checkout-page textarea:focus {
+    border-color: #8895e1;
+    box-shadow: 0 0 5px rgba(89, 123, 226, 0.2);
+}
+
+.checkout-page textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Order Summary */
+.checkout-page #orderSummary {
+    background-color: #fff7fb;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    color: #555;
+}
+
+.checkout-page #checkoutForm h2 {
+    color: #a60f92;
+    margin-top: 25px;
+}
+
+/* Grand Total */
+.checkout-page #grandTotal {
+    color: #0c45d6;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+    padding: 15px 0;
+    border-top: 1px solid #b8a7b3;
+}
+
+/* Place Order Button */
+.checkout-page #checkoutForm button {
+    width: 100%;
+    padding: 14px;
+    background-color: #030513;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.checkout-page #checkoutForm button:hover {
+    background-color: #891c77e2;
+}
     
+
+
+/* Checkout Navigation - Match Other Pages */
+.checkout-page nav {
+      background-color: #222;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px;
+        font-family:serif;
+}
+
+.checkout-page nav .logo {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.checkout-page nav .lh4 {
+    color: darkcyan;
+    font-size: 12px;
+    font-weight:lighter;
+}
+
+.checkout-page nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.checkout-page nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family:serif;
+}
+
+
+
+/* GlamCart Payment Method Section */
+.payment-section {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff7fb;
+    border: 1px solid #f0d6e8;
+    border-radius: 13px;
+    box-shadow: 0 4px 12px rgba(142, 68, 117, 0.10);
+}
+
+.payment-section h2 {
+    text-align: center;
+    color: #8e4475;
+    margin-bottom: 8px;
+}
+
+.payment-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 22px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    min-height: 68px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid #ead5e2;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.payment-option:hover {
+    border-color: #a34d83;
+    background: #fff0f6;
+}
+
+.payment-option input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #8e4475;
+    flex-shrink: 0;
+}
+
+.app-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.google-icon {
+    color: #4285F4;
+    background: #eef4ff;
+    font-size: 28px;
+}
+
+.phone-icon {
+    color: white;
+    background: #5f259f;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.paytm-icon {
+    color: #00a9e0;
+    background: #e9faff;
+    font-size: 12px;
+}
+
+.rupay-icon {
+    color: #087b45;
+    background: #eaf8ef;
+    font-size: 12px;
+}
+
+.payment-name {
+    color: #292638;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.demo-note {
+    margin-top: 20px;
+    padding: 13px;
+    text-align: center;
+    color: #8e4475;
+    background: #fce4ef;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+
