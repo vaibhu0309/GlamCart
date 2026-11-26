@@ -6,7 +6,7 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Add product to cart
-function addToCart(name, price) {
+function addToCart(name, price,image) {
     let found = false;
 
     for (let i = 0; i < cart.length; i++) {
@@ -20,6 +20,7 @@ function addToCart(name, price) {
         cart.push({
             name: name,
             price: price,
+             image: image,//add
             quantity: 1
         });
     }
@@ -28,6 +29,7 @@ function addToCart(name, price) {
     alert(name + " added to cart!");
     displayCart();
 }
+
 
 
 // Save cart
@@ -111,13 +113,14 @@ function clearCart() {
 }
 
 
-// Checkout demo
 function checkout() {
     if (cart.length === 0) {
         alert("Your cart is empty!");
     } else {
-        alert("Thank you for shopping with StyleCart!");
+        localStorage.setItem("checkoutCart", JSON.stringify(cart));
+        window.location.href = "checkout.html";
     }
+    //alert("New checkout function is working!");
 }
 
 
@@ -152,3 +155,130 @@ document.addEventListener("DOMContentLoaded", function() {
     displayCart();
 });  
 
+
+
+//changes
+// Display checkout details
+if (window.location.pathname.includes("checkout.html")) {
+
+    let checkoutCart = JSON.parse(localStorage.getItem("checkoutCart")) || [];
+
+    let summary = document.getElementById("orderSummary");
+    let totalElement = document.getElementById("grandTotal");
+
+    let total = 0;
+
+    checkoutCart.forEach(function(item) {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        summary.innerHTML += `
+            <p>${item.name} - Rs. ${item.price} x ${item.quantity}</p>
+        `;
+    });
+
+    totalElement.innerHTML = "Total Amount: Rs. " + total;
+}
+
+
+
+// Place customer order
+function placeOrder(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("customerName").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+
+    let checkoutCart = JSON.parse(localStorage.getItem("checkoutCart")) || [];
+
+    if (checkoutCart.length === 0) {
+        alert("Your cart is empty!");
+        return false;
+    }
+
+    let total = 0;
+
+    checkoutCart.forEach(function(item) {
+        total += item.price * item.quantity;
+    });
+
+    let order = {
+        customerName: name,
+        phone: phone,
+        address: address,
+        products: checkoutCart,
+        total: total,
+        date: new Date().toLocaleString()
+    };
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    orders.push(order);
+
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    alert("Your order has been placed successfully!");
+
+    localStorage.removeItem("checkoutCart");
+    localStorage.removeItem("cart");
+    cart = [];
+
+    window.location.href = "orders.html";
+
+    return false;
+}
+
+
+
+
+//after this code for myorder page
+// Display previous orders
+function displayOrders() {
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let list = document.getElementById("ordersList");
+
+    list.innerHTML = "";
+
+    if (orders.length === 0) {
+        list.innerHTML = "<h2>No previous orders found.</h2>";
+        return;
+    }
+
+    for (let i = 0; i < orders.length; i++) {
+        let order = orders[i];
+
+        let productDetails = "";
+
+        for (let j = 0; j < order.products.length; j++) {
+            let item = order.products[j];
+
+            productDetails +=
+                "<div class='ordered-product'>" +
+                "<img src='" + (item.image || "images/no-image.jpg") + "'>" +
+                "<div>" +
+                "<h3>" + item.name + "</h3>" +
+                "<p>Price: ₹" + item.price + "</p>" +
+                "<p>Quantity: " + item.quantity + "</p>" +
+                "</div></div>";
+        }
+
+        list.innerHTML +=
+            "<div class='order-card'>" +
+            "<div class='order-heading'>" +
+            "<h2>Order #" + ("00" + (i + 1)) + "</h2>" +
+            "<span>Order Placed</span>" +
+            "</div>" +
+            "<p class='order-date'>Date: " + order.date + "</p>" +
+            "<h3>Product Details</h3>" +
+            productDetails +
+            "<h3 class='order-total'>Total Amount: ₹" + order.total + "</h3>" +
+            "<p><b>Delivery Address:</b> " + order.address + "</p>" +
+            "</div>";
+    }
+}
+
+// Show orders when page opens
+if (window.location.pathname.includes("orders.html")) {
+    displayOrders();
+}
